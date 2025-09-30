@@ -99,6 +99,25 @@ public class MainActivity extends AppCompatActivity {
 
         XAxis xAxis = lineChart.getXAxis();
         xAxis.setPosition(XAxis.XAxisPosition.BOTTOM);
+        xAxis.setGranularity(5000f); // 5 segundos
+        xAxis.setValueFormatter((value, axis) -> {
+            long millis = (long) value;
+            long seconds = (millis - startTime) / 1000;
+            return seconds + "s";
+        });
+
+        // Eje Y a la izquierda con decibelios
+        lineChart.getAxisRight().setEnabled(false); // ocultamos eje derecho
+        lineChart.getAxisLeft().setAxisMinimum(0f);  // mínimo en 0 dB
+        lineChart.getAxisLeft().setAxisMaximum(120f); // máximo estimado (ajústalo según tu sensor)
+        lineChart.getAxisLeft().setGranularity(10f); // saltos de 10 dB
+        lineChart.getAxisLeft().setDrawGridLines(true);
+        lineChart.getAxisLeft().setDrawLabels(true);
+
+        //Marcador personalizado(cuando seleccionas un punto especifico de la grafica)
+        CustomMarkerView marker = new CustomMarkerView(this, R.layout.marker_view);
+        lineChart.setMarker(marker);
+
 
         lineChart.invalidate();
     }
@@ -106,7 +125,8 @@ public class MainActivity extends AppCompatActivity {
     // Agregar nueva entrada al gráfico
     private void addEntryToChart(int nivel, Long timestamp) {
         // X = índice creciente, Y = nivel en dB
-        entries.add(new Entry(index++, nivel));
+        if (startTime == 0) startTime = timestamp; // guardo inicio
+        entries.add(new Entry(timestamp, nivel)); // ahora X = timestamp
         dataSet.notifyDataSetChanged();
         lineData.notifyDataChanged();
         lineChart.notifyDataSetChanged();
