@@ -1,0 +1,10 @@
+[35mapp/build.gradle[m[36m:[m[32m34[m[36m:[m    implementation 'com.google.[1;31mfirebase[m:[1;31mfirebase[m-database:22.0.1'
+[35mapp/google-services.json[m[36m:[m[32m4[m[36m:[m    "[1;31mfirebase[m_url": "https://sonometro-5375d-default-rtdb.[1;31mfirebase[mio.com",
+[35mapp/google-services.json[m[36m:[m[32m6[m[36m:[m    "storage_bucket": "sonometro-5375d.[1;31mfirebase[mstorage.app"
+[35mapp/src/main/java/com/example/sonometro/MainActivity.java[m[36m:[m[32m24[m[36m:[mimport com.google.[1;31mfirebase[m.database.ChildEventListener;
+[35mapp/src/main/java/com/example/sonometro/MainActivity.java[m[36m:[m[32m25[m[36m:[mimport com.google.[1;31mfirebase[m.database.DataSnapshot;
+[35mapp/src/main/java/com/example/sonometro/MainActivity.java[m[36m:[m[32m26[m[36m:[mimport com.google.[1;31mfirebase[m.database.DatabaseError;
+[35mapp/src/main/java/com/example/sonometro/MainActivity.java[m[36m:[m[32m27[m[36m:[mimport com.google.[1;31mfirebase[m.database.DatabaseReference;
+[35mapp/src/main/java/com/example/sonometro/MainActivity.java[m[36m:[m[32m28[m[36m:[mimport com.google.[1;31mfirebase[m.database.FirebaseDatabase;
+[35mapp/src/main/java/com/example/sonometro/MainActivity.java[m[36m:[m[32m29[m[36m:[mimport com.google.[1;31mfirebase[m.database.ValueEventListener;
+[35marduino/sonometro/sonometro.ino[m[36m:[m[32m8[m[36m:[m#define DATABASE_URL "https://sonometro-5375d-default-rtdb.[1;31mfirebase[mio.com/"

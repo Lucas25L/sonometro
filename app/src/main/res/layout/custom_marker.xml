@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/marker_bg"
+    android:padding="8dp">
+
+    <TextView
+        android:id="@+id/tvNivelMarker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="-- dB"
+        android:textColor="@android:color/white"
+        android:textStyle="bold"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/tvHoraMarker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="--:--:--"
+        android:textColor="@android:color/white"
+        android:textSize="12sp" />
+</LinearLayout>
