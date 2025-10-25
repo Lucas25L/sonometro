@@ -45,27 +45,38 @@ dependencies {
 
 // --- Generar documentación Javadoc del código Java ---
 tasks.register('generateJavadoc', Javadoc) {
-    // Rutas del código fuente Java
+    // CORRECCIÓN: Se añade el String de razón requerido por Gradle 8+
+    doNotTrackState("Inconsistent Android SDK classpath structure causes tracking failures in Gradle 8.x+")
+
+    options.windowTitle = "Documentación Javadoc - Sonómetro"
+    options.docTitle = "Documentación del Proyecto Sonómetro"
+
+    // 1. Define el código fuente que quieres documentar
     source = android.sourceSets.main.java.srcDirs
 
-    // Incluir el classpath del SDK de Android (necesario para evitar errores)
-    classpath += files(android.getBootClasspath().join(File.pathSeparator))
+    // 2. Definición de la CLASSPATH (Método más robusto)
+    // Inicialmente toma la bootClasspath del Android SDK
+    classpath += project.files(android.getBootClasspath())
 
-    // Carpeta donde se guardará la documentación HTML
-    destinationDir = file("$buildDir/docs/javadoc")
+    // Agregamos todas las dependencias compiladas de la variante 'release' (o 'debug')
+    android.applicationVariants.all { variant ->
+        // Si no se encuentra la variante 'release' se intenta con 'debug'
+        if (variant.name == 'release') {
+            classpath += variant.javaCompileProvider.get().classpath
+        }
+    }
 
-    // Ignorar errores de dependencias que no sean de tu código
+    // 3. Define la carpeta donde se guardará el Javadoc
+    destinationDir = file("$buildDir/javadoc")
+
+    // 4. Opciones adicionales
     failOnError false
-
-    // Localización en español (opcional)
+    options.addStringOption('Xdoclint:none', '-quiet')
     options.locale = 'es'
     options.encoding = 'UTF-8'
     options.charSet = 'UTF-8'
 
-    // Título de la documentación
-    options.windowTitle = "Documentación Javadoc - Sonómetro"
-    options.docTitle = "Documentación del Proyecto Sonómetro"
-
-    // Agregar enlaces a documentación externa (opcional)
+    // 5. Agregar enlaces a documentación externa
     options.links("https://developer.android.com/reference/")
 }
+
