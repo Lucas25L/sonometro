@@ -42,3 +42,30 @@ dependencies {
     androidTestImplementation libs.ext.junit
     androidTestImplementation libs.espresso.core
 }
+
+// --- Generar documentación Javadoc del código Java ---
+tasks.register('generateJavadoc', Javadoc) {
+    // Rutas del código fuente Java
+    source = android.sourceSets.main.java.srcDirs
+
+    // Incluir el classpath del SDK de Android (necesario para evitar errores)
+    classpath += files(android.getBootClasspath().join(File.pathSeparator))
+
+    // Carpeta donde se guardará la documentación HTML
+    destinationDir = file("$buildDir/docs/javadoc")
+
+    // Ignorar errores de dependencias que no sean de tu código
+    failOnError false
+
+    // Localización en español (opcional)
+    options.locale = 'es'
+    options.encoding = 'UTF-8'
+    options.charSet = 'UTF-8'
+
+    // Título de la documentación
+    options.windowTitle = "Documentación Javadoc - Sonómetro"
+    options.docTitle = "Documentación del Proyecto Sonómetro"
+
+    // Agregar enlaces a documentación externa (opcional)
+    options.links("https://developer.android.com/reference/")
+}

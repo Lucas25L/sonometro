@@ -55,7 +55,7 @@
         \nBacik, Tania Rocio (Estudiante)
         \nLópez, Lucas Ariel (Estudiante)
         \n
-        \nProyecto final para la materia de Practicas Profesionalizantes II dictada por el profesor Cerdan, Victor (Técnico en Desarrollo de Software)
+        \nProyecto final para la materia de Practicas Profesionalizantes II dictada por el prof. Cerdan, Victor Andres (Profesor de Educación Técnica)
         \n
         \nU.E.G.P N°161 "Instituto Barranqueras"
     </string>
@@ -66,4 +66,6 @@
         \nVersión de la app: 1.0.0
     </string>
 
+    <!-- TOAST -->
+    <string name="ESP32">ESP32 desconectado a la red wifi. \nEspere a que se conecte o verifique la conexión manualmente desde Arduino</string>
 </resources>
