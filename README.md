@@ -15,14 +15,15 @@
 ## 🚀 Instrucciones de uso
 
 ### 1. Arduino (ESP32 + MAX4466)
-1. Abrir `arduino/sonometro.ino` en Arduino IDE.
-2. Configurar el **WiFi** y las credenciales de Firebase dentro del código.
+1. Abrir `arduino/sonometro/sonometro.ino` en Arduino IDE.
+2. Copiar `secrets.example.h` como `secrets.h` (misma carpeta) y completar WiFi, URL de la base, API key y el usuario/contraseña del ESP32 (Firebase Authentication). `secrets.h` está en `.gitignore`.
 3. Subir el sketch al ESP32.
 
 ### 2. Android (Aplicación móvil)
-1. Abrir el proyecto en **Android Studio**.
-2. Configurar `google-services1.json` con tu proyecto de Firebase.
-3. Ejecutar la app en un dispositivo físico o emulador.
+1. Abrir el proyecto en **Android Studio** (Gradle JDK 17 a 21).
+2. Descargar `google-services.json` desde tu proyecto de Firebase (app Android `com.example.sonometro`) y copiarlo en `app/`. Está en `.gitignore`.
+3. Habilitar el método **Anónimo** en Firebase Authentication y publicar las reglas de Realtime Database.
+4. Ejecutar la app en un dispositivo físico.
 
 ---
 

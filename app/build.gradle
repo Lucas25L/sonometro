@@ -31,7 +31,10 @@ android {
 
 dependencies {
 
-    implementation 'com.google.firebase:firebase-database:22.0.1'
+    // Firebase: el BoM fija versiones compatibles entre sí
+    implementation platform('com.google.firebase:firebase-bom:35.0.2')
+    implementation 'com.google.firebase:firebase-database'
+    implementation 'com.google.firebase:firebase-auth'
     implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
 
     implementation libs.appcompat

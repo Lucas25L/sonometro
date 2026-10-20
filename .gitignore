@@ -13,3 +13,8 @@
 .externalNativeBuild
 .cxx
 local.properties
+
+# Credenciales y configuración local (NO subir a git)
+/app/google-services.json
+/arduino/sonometro/secrets.h
+/.idea/
