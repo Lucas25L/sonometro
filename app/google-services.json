@@ -1,27 +1,37 @@
 {
   "project_info": {
-    "project_number": "1054757831819",
-    "firebase_url": "https://sonometro-5375d-default-rtdb.firebaseio.com",
-    "project_id": "sonometro-5375d",
-    "storage_bucket": "sonometro-5375d.firebasestorage.app"
+    "project_number": "708231258476",
+    "firebase_url": "https://sonometro-v2-default-rtdb.firebaseio.com",
+    "project_id": "sonometro-v2",
+    "storage_bucket": "sonometro-v2.firebasestorage.app"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:1054757831819:android:022fe9d0fcaf82e6e2408e",
+        "mobilesdk_app_id": "1:708231258476:android:8871b45b9cefd013101349",
         "android_client_info": {
           "package_name": "com.example.sonometro"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "708231258476-u0m22bg0f7qn7rvtr7mml09ocdcvpj14.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
-          "current_key": "AIzaSyCXaaDVFA1oOL_AuJMTjFEnyrjFwVM27j0"
+          "current_key": "AIzaSyA_AXh1FHNE9MU13YuSfBc59Nej3Wund7o"
         }
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "708231258476-u0m22bg0f7qn7rvtr7mml09ocdcvpj14.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         }
       }
     }

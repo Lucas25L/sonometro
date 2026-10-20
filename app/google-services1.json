@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "1054757831819",
+    "firebase_url": "https://sonometro-5375d-default-rtdb.firebaseio.com",
+    "project_id": "sonometro-5375d",
+    "storage_bucket": "sonometro-5375d.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1054757831819:android:022fe9d0fcaf82e6e2408e",
+        "android_client_info": {
+          "package_name": "com.example.sonometro"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCXaaDVFA1oOL_AuJMTjFEnyrjFwVM27j0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

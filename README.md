@@ -21,7 +21,7 @@
 
 ### 2. Android (Aplicación móvil)
 1. Abrir el proyecto en **Android Studio**.
-2. Configurar `google-services.json` con tu proyecto de Firebase.
+2. Configurar `google-services1.json` con tu proyecto de Firebase.
 3. Ejecutar la app en un dispositivo físico o emulador.
 
 ---
