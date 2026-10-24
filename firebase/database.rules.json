@@ -1,0 +1,30 @@
+{
+  "rules": {
+    ".read": false,
+    ".write": false,
+    "ruido": {
+      ".read": "auth != null",
+      ".indexOn": ["fecha_hora"],
+      ".write": "auth != null && !newData.exists()",
+      "$id": {
+        ".write": "auth.token.email === 'esp32@sonometro.app'",
+        ".validate": "newData.hasChildren(['nivel_ruido', 'fecha_hora'])",
+        "nivel_ruido": { ".validate": "newData.isNumber() && newData.val() >= 0 && newData.val() <= 140" },
+        "fecha_hora": { ".validate": "newData.isNumber()" },
+        "$other": { ".validate": false }
+      }
+    },
+    "control": {
+      ".read": "auth != null",
+      "monitoreo": {
+        ".write": "auth != null",
+        ".validate": "newData.isBoolean()"
+      },
+      "lastSeen": {
+        ".write": "auth.token.email === 'esp32@sonometro.app'",
+        ".validate": "newData.isNumber()"
+      },
+      "$other": { ".validate": false }
+    }
+  }
+}
